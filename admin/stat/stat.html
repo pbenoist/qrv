@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="appStat">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal ID - Administration</title>
+    <link rel="stylesheet" href="../../inc/css/angular-chart.css">
+    <link rel="stylesheet" href="../../inc/css/bootstrap.min.css">       
+    <link rel="stylesheet" href="css/stat.css">       
+    <meta name="viewport" content="initial-scale=1.0">
+
+</head>
+<body>
+
+<div ng-controller="controllerStat" class="container">    
+
+<h1>Courbe des inscriptions par {{selectedItem.name}}</h1>
+
+<div>
+  <select ng-model="selectedItem" ng-change="changeOption()" ng-options="option.name for option in options"></select>
+  <br>
+</div>
+
+<canvas id="base" class="chart-base" chart-type="type" data="data"
+  labels="labels" legend="true" series="series"
+  click="onClick">
+</canvas> 
+
+
+</div>
+
+</body>
+
+<script src="../../inc/js/angular.min.js"></script>
+<script src="../../inc/js/Chart.js"></script>
+<script src="../../inc/js/angular-chart.js"></script>
+<script src="../../inc/js/jquery.min.js"></script>
+<script src="../../inc/js/bootstrap.min.js"></script>
+
+<script src="js/stat.js"></script>
+
+</html>
+

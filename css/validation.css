@@ -1,0 +1,31 @@
+.info_img {
+}
+
+.info_comment_2 {
+  display: inline-block;
+  width: 150px;
+  vertical-align:middle;
+  margin-left: 10px;
+}
+
+.info_comment_3 {
+  display: inline-block;
+  width: 150px;
+  margin-left: 10px;
+  vertical-align:middle;
+}
+
+.info_comment_4 {
+  display: inline-block;
+  width: 150px;
+  vertical-align:middle;
+  margin-left: 10px;
+}
+
+.info_comment_gaia {
+  display: inline-block;
+  width: 150px;
+  vertical-align:middle;
+  margin-top: 90px;
+  margin-left: 10px;
+}

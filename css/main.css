@@ -1,0 +1,296 @@
+/* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+/** AJOUTS FRED **/
+
+@import url(http://fonts.googleapis.com/css?family=Chewy);
+
+@media (min-width:768px) {
+html, body{
+	height:100%;
+	}
+}
+
+@media (min-width:768px) {
+	.container {
+		background:center no-repeat fixed url("../template/img/fd.jpg");
+		background-size : cover;
+		color:#444;
+		min-height:100%;
+	}
+}
+
+.lienmenu{
+	color:#fff;
+	font-size:16px;
+	margin-top:10px;
+}
+
+.lienmenu a{
+	color:#fff;
+}
+
+.lienmenu a:hover,
+.lienmenu a:focus{
+	color:#DCD4FF;
+	text-decoration:none;
+}
+
+.taillefleche{
+	font-size:12px;
+}
+
+.habillage{
+ display:none;
+}	
+
+@media (min-width:768px) {
+	.habillage{
+		display: block;
+	}
+}
+
+.tourvideo{
+	  background-color: rgba(33, 29, 29, 0.3);
+	  padding: 10px 10px;
+	  -moz-border-radius: 10px;
+	  -webkit-border-radius: 10px;
+	  -o-border-radius: 10px;
+	  -khtml-border-radius: 10px;
+	  border-radius: 10px;
+}
+
+.titrevideo{
+	font-family: 'Chewy', cursive;
+	text-shadow: 0px 1px 1px #FFF;
+	font-size:26px;
+	text-align:center;
+	padding:10px 10px;
+}
+
+.titrevideo2{
+	font-family: 'Chewy', cursive;
+	text-shadow: 0px 1px 1px #FFF;
+	font-size:18px;
+	text-align:center;
+	padding:10px 10px;
+}
+
+.hautdepage{
+	min-height:50px;
+	background-color: rgba(255, 255, 255, 0.4);
+	margin-bottom:30px;
+}
+
+.soustitreheader{
+	color:#fff;
+	font-size : 20px;
+	font-family: 'Chewy', cursive;
+	padding-left: 30px;
+}
+
+.basdepage{
+	min-height:50px;
+}
+
+@media (min-width:768px) {
+	.texteblanc{
+		color:#fff;
+	}	
+}
+
+.a30dehaut{
+	margin-top:30px;
+}
+
+.a30dedroite{
+	margin-right:30px;
+}
+
+.a30debas{
+	margin-bottom:30px;
+}
+
+/** FIN AJOUTS FRED **/
+
+
+.first_entoure_red{
+  padding: 5px 10px 5px 10px; 
+  margin-bottom:20px;
+  margin-top:20px;
+
+/*
+    border: 2px solid #a1a1a1;
+    background: #FA7373;
+    color: white;
+*/    
+  text-align:center;
+  border-radius: 43px;
+  font-size: 120%;
+  font-weight: bold;
+
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+
+;}
+
+
+
+.first_texteintro{
+  font-size: 100%;
+/*  color: #46AEE1;
+  font-weight: bold; */
+  margin : 0px 0px 20px 0px;
+  text-align: justify;
+}
+
+.first_texteintro_bold{
+  font-size: 100%;
+  font-weight: bold; 
+/*  color: #46AEE1; */
+
+  margin : 20px 0px 20px 0px;
+  text-align: justify;
+}
+
+.first_text_doigt{
+
+  font-size: 120%;
+/*  color: #46AEE1;*/
+  font-weight: bold;
+  margin-left : 0px;
+}
+
+
+
+.first_imagedroite{
+  float:right;
+  width:40%;
+  padding-left:20px;
+}
+
+.first_img_doigt{
+  width:40%;
+  bottom:0;
+}
+
+.first_bouton{
+  width:50%;
+}
+
+.first_clear{
+  clear:both;
+  padding-bottom:10px;
+}
+
+
+.qrv-panel-title
+{
+  margin-top: -7px;
+  margin-bottom: -10px;
+  font-size: 75%;
+}
+
+.qrv-panel-text
+{
+  font-size: 90%;
+  color: #3974D2;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -30px;
+  text-align: justify;  
+}
+.qrv-h3
+{
+  font-size: 120%;
+  color: white;
+  background-color: #EE3A52;
+  border-color: #d9edf7;
+}
+
+.encadre{
+  border-style: double;
+}
+.btn-appel {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #d9edf7;
+}
+
+.btn-appel:focus {
+  outline: 0;
+}
+
+.small_red {
+  font-size: 75%;
+  color: #ff6655;
+}
+
+.mess_error {
+  color: #ff6655;
+}
+
+.small_grey {
+  font-size: 75%;
+  color: grey;
+}
+
+.pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+.btn-special {
+  color: #ffffff;
+  background-color: #F8E914;
+  border-color: #4cae4c;
+}
+.btn-special:hover,
+.btn-special:focus,
+.btn-special:active,
+.btn-special.active,
+.open .dropdown-toggle.btn-special {
+  color: #ffffff;
+  background-color: #E4D507;
+  border-color: #398439;
+}
+
+.header-placeholder {
+  height: 50px;
+}
+
+@media (max-width: 767px) {
+
+    .visible-xs.collapse.in {
+        display: block!important;
+    }
+    .visible-xs.collapse {
+        display: none!important;
+    }
+
+}
+
+.text-lien
+{
+  color: inherit;
+}  
+
+.text-lien:hover 
+{
+color: inherit;
+background-color:inherit;
+text-decoration:none;
+cursor:pointer;
+}
+.cadrevideopres{	position:relative;	padding-bottom:56.25%;	padding-top:30px;	height:0;	overflow:hidden;	}.cadrevideopres iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+/*
+.modal-title {
+  border-color: #428bca;
+  background-color: #428bca;
+}
+*/

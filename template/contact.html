@@ -1,0 +1,39 @@
+﻿<div class="container">
+<div class="col-sm-6 col-sm-offset-3 panel">
+
+  <!-- PAGE TITLE -->
+  <div class="page-header">
+    <h3 class="text-center"><span class="glyphicon glyphicon-user"></span> Contactez-nous</h3>
+  </div>
+
+  <!-- FORM -->
+   <form ng-show="!send" ng-cloak ng-submit="sendMail()" >
+
+      <label>N° du QR Code </label>
+      <input type="text" name="codepin" class="form-control" ng-model="codepin" readonly>
+
+      <label class="text-center">Objet de votre message</label>
+      <input type="text" name="objet" class="form-control" ng-model="objet">
+
+      <label class="text-center">Votre message</label>
+      <textarea class="form-control" rows="8" cols="50" name="message" ng_model="message"></textarea>
+      <label class="text-danger">N'oubliez pas de preciser dans votre message les informations permettant de vous contacter (eMail ou N° de tel)...</label>
+
+      <div class="panel panel-default">
+      <div class="panel-body">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" >
+        <span class="glyphicon glyphicon-flash"></span> Envoyer</button>
+      </div>
+      </div>
+
+  </form>
+
+
+
+<div ng-show="send">
+  <alert type="success" close="closeMail()">Votre mail a bien été envoyé.<br> Il sera traité dans les plus brefs délai.</alert>
+</div>
+
+
+</div>
+</div>

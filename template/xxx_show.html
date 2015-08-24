@@ -1,0 +1,116 @@
+﻿<!-- <div ng-controller="showController">
+Attention. Avec le routing, le controller est executé 2 fois... => pas besoin de la mettre ici
+ -->
+<div class="col-md-6 col-md-offset-3">
+
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <h3 class="panel-title text-center">Mon n° d'identification est :<br>{{nuserie}}</h3>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-title text-center qrv-panel-title">N° de médaille QRV : {{codepin}}</div>
+    </div>
+  </div>
+
+  <div class="panel-body">
+
+<!-- PREMIERE CONNECTION -->
+
+    <div ng-show="isFirst()">
+
+        <div class="first_texteintro">
+          Vous venez de vous connecter au site www.qrv.fr.
+          Ce site, développé par Véthica, est conçu pour
+          permettre à toute personne ayant recueilli un
+          animal blessé ou perdu, d’entrer instantanément
+          en contact avec son propriétaire.<br/><br/>
+          Pour que ce service puisse être opérationnel,
+          nous avons besoin :<br/>
+          <ul type="square">
+            <li>de votre <strong>adresse mail</strong> (impératif)</li>
+            <li>de votre <strong>numéro de Tél</strong> (facultatif, mais vivement recommandé)</li>
+          </ul>
+        </div>
+      
+        <div class="first_entoure_red">Vous êtes le propriètaire de l'animal</div>
+        <div class="first_imagedroite">
+          <img  class="first_img_doigt" src="img_src/doigt_orange.gif"/>
+          <a href="#/New"><img class="first_bouton" src="img_src/medaille.gif"/></a>
+        </div>
+        <div class="first_text_doigt">Nous vous invitons à créer le compte de votre animal</div>          
+        <div class="first_clear"></div>
+
+        <div class="first_entoure_red">Vous venez de recueillir cet animal</div>
+        <div class="first_imagedroite">
+          <img class="first_img_doigt" src="img_src/doigt_orange.gif"/>
+          <a href="#/Assistance"><img class="first_bouton" src="img_src/vethica.png"/></a>
+        </div>
+        <div class="first_text_doigt">Nous vous proposons de vous assister dans la recherche de son propriétaire</div>
+        <div class="first_clear"></div>
+
+    </div>
+
+<!-- QRV EXISTANT -->
+
+    <div ng-show="!isFirst()">
+      <div class="row text-center">
+        <span ng-show="canConnect()"><a class="btn btn-primary btn-sm" href='#/Login'>Connexion </a></span>
+        <span ng-show="isLogin()"><a class="btn btn-primary btn-sm" onclick="unLogin()">Deconnexion</a></span>
+        <a class="btn btn-primary btn-sm" href='#/Edit' ng-show="isLogin()">Mise à jour</a>
+        <a class="btn btn-primary btn-sm" href='#/Image' ng-show="isLogin()" popover="Ajouter une photo" popover-trigger="mouseenter">Photo</a>
+      </div>  
+
+
+    <div ng-show="!isValide()">
+<!-- 
+      <div class="row text-center text-danger" ng-bind-html="message_red"></div>    
+-->    
+      <div class="row text-center text-danger">
+        <strong>Votre compte est enregistré.</strong><br>Vous avez reçu un courriel contenant un lien pour valider et compléter votre compte.<h5><small>Ce lien est valable 7 jours</small></h5>        
+      </div>
+      <div class="row text-center text-info">
+        Si vous ne recevez pas ce courriel de validation, vérifiez vos "spams" (courriers indésirables) ou vérifiez <a class="btn btn-primary btn-sm" href='#/Adresse'>ICI</a> votre adresse email...<br>
+      </div>
+    </div>
+
+      <div class="row text-center">
+        <h3>Je m'appelle <strong><a class="text-lien" onclick="refresh()">{{nom_animal}}</a> </strong></h3>
+      </div>                  
+
+       <div class="row text-center" ng-show="isReady()">
+        <img degrees='rotate_value' rotate ng-src="img/{{image_name}}.jpg">
+      </div>
+
+      <span ng-show="isLogin()">
+        <div class="row text-center">
+         <button class="btn btn-primary btn-sm glyphicon glyphicon-repeat" popover="Faire pivoter la photo" popover-trigger="mouseenter" ng-click="rotate_image()"> </button>
+         </div>
+      </span>
+      <br>
+
+
+      <div class="panel panel-info text-center">
+
+        <button type="button" class="btn btn-appel btn-lg btn-block" ng-click="isCollapsed = !isCollapsed" >Appelez mon propriètaire SVP</button>
+        <div collapse="isCollapsed">
+          {{nom_proprio}} {{prenom_proprio}}<br>{{tel_proprio | telephoneFilter}}<br>
+          {{email_proprio}}<br>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div class="text-center">
+<h6><small>Un problème, une question...</small></h6>
+<a class="btn btn-primary btn-xs" href='#/Contact' >Contactez-nous</a>
+</div>
+
+</div>
+

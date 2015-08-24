@@ -1,0 +1,12 @@
+body {
+  font-size: 12px;
+  color: #333333;
+}
+
+[ac-chart] {
+float:left;
+width: 48%;
+height: 400px;
+margin: 0 1%;
+}
+

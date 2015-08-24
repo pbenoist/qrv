@@ -1,0 +1,9 @@
+0
+http://www.i-cad.fr/sas.php?connexion=1&environnement=PROD
+3
+https://base.veterinaire.fr/portail/*
+var login = document.getElementById('loginNum');login.value = login_value;var password = document.getElementById('password');password.value = password_value;var validate = document.getElementById('BtnLogAction');validate.click();
+https://www.i-cad.fr/index.php/VET
+window.location.href = 'https://www.i-cad.fr/index.php/identificateur/gerer-les-identifications/recherche-identification';
+https://www.i-cad.fr/index.php/identificateur/gerer-les-identifications/recherche-identification
+document.getElementsByName('codins')[0].value = iso_value;var els = document.getElementsByTagName('input');for (var i = 0, l = els.length; i < l; i++) {var el = els[i];if (el.value === 'Rechercher') el.click(); }

@@ -1,0 +1,31 @@
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+
+  <!-- PAGE TITLE -->
+  <div class="page-header">
+    <h3 class="text-center"><span class="glyphicon glyphicon-user"></span> Connexion</h3>
+  </div>
+
+  <!-- FORM -->
+   <form ng-cloak ng-submit="processLogin()" autocomplete="off">
+
+      <label class="text-center">N° du QR Code </label>
+      <input type="text" name="str_search" class="form-control" ng-model="codepin" readonly>
+      <label class="text-right">Mot de passe</label>
+      <span class="text-right"><small><a href="" ng-click="send_password()">&nbsp;&nbsp;&nbsp;&nbsp;Mot de passe oublié ?</a></small></span>
+      <input type="password" name="password" class="form-control" ng-model="password" oninput="input_password()">
+
+      <div class="text-center text-danger">{{mess}}</div>
+
+      <div class="panel panel-default">
+      <div class="panel-body">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" >
+        <span class="glyphicon glyphicon-flash"></span> Connexion
+        </button>
+      </div>
+      </div>
+
+  </form>
+
+</div>
+</div>

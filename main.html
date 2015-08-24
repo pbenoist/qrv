@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal ID - Powered by Vethica</title>
+    <link rel="stylesheet" href="inc/css/bootstrap.min.css">       
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="css/main.css">       
+    <link rel="stylesheet" href="css/image.css">   
+
+</head>
+ 
+<body ng-app="mainApp">
+<div class="container">
+
+	<div class="row hautdepage habillage">
+		<div class="col-sm-8">
+			<a href="#index.php"><img src="template/img/logo.png"></a>		
+		<div class="soustitreheader">Une médaille QR Code pour le retrouver !</div>
+		</div>
+		
+		<div class="col-sm-4">
+			<p class="lienmenu"><a href='http://qrv.fr'><span class="glyphicon glyphicon-play taillefleche"></span> <strong>Accueil</strong></p>
+						<p class="lienmenu"><a href="https://youtu.be/A_Op9N6oeXI" target="_blank"><span class="glyphicon glyphicon-play taillefleche"></span> <strong>Didacticiel</strong></a></p>
+			<p class="lienmenu"><a href="http://www.vethica.com/monanimal/index.php" target="_blank"><span class="glyphicon glyphicon-play taillefleche"></span> <strong>Commander une médaille QRV</strong></a></p>
+			<p class="lienmenu"><a href='#/Contact'><span class="glyphicon glyphicon-play taillefleche"></span> <strong>Contact</strong></a></p>			
+		</div>
+		
+		<!--<div class="col-sm-4">
+			<a href="http://www.vethica.com/monanimal/index.php" target="_blank" class="btn btn-primary btn-warning a30dehaut pull-right a30dedroite"><span class="glyphicon glyphicon-play"></span> Commander une médaille QRV</a>
+		</div>-->
+	</div>
+	
+
+    <div class="row">
+        <div ng-cloak class="ng-cloak" ng-view></div>
+    </div>
+	
+
+
+	
+	<div class="row basdepage habillage">
+		<div class="col-sm-12">
+		</div>
+	</div>
+
+	<footer class="footer text-center texteblanc">Powered by Vethica<br>
+	</footer> 
+		
+</div>
+
+
+</body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54492424-1', 'auto');
+//  ga('send', 'pageview');
+
+</script>
+
+
+<script src="inc/js/angular.min.js"></script>
+<script src="inc/js/angular-route.min.js"></script>
+<script src="inc/js/angular-sanitize.min.js"></script>
+<script src="inc/js/jquery.min.js"></script>
+<script src="inc/js/bootstrap.min.js"></script>
+<script src="inc/js/ui-bootstrap-0.11.2.min.js"></script>
+<script src="inc/js/ui-bootstrap-tpls-0.11.2.min.js"></script>
+
+<!-- <script src="js/qr_main.js"></script>
+<script src="js/qr_adresse.js"></script>
+<script src="js/qr_assist.js"></script>
+<script src="js/qr_contact.js"></script>
+<script src="js/qr_edit.js"></script>
+<script src="js/qr_image.js"></script>
+<script src="js/qr_info.js"></script>
+<script src="js/qr_login.js"></script>
+<script src="js/qr_new.js"></script>
+<script src="js/qr_search.js"></script>
+<script src="js/qr_show.js"></script>
+ -->
+<script src="js/build/qrv.min.js"></script>
+
+</html>
+
+ 

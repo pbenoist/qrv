@@ -1,0 +1,54 @@
+﻿<div class="container">	
+	<!--<div class="col-sm-5 habillage">		
+		<div class="col-sm-offset-3 col-sm-8">			
+			<img class="img-responsive a30debas" src="template/img/3visusmedailles2.png">		
+		</div>			
+	</div>-->
+	
+	<div class="col-sm-offset-3 col-sm-6 panel">
+			  <div class="page-header">
+				<h3 class="text-center"><span class="glyphicon glyphicon-search"></span> Recherche par N° d'identification</h3>
+			  </div>
+			  <div ng-controller="searchController">
+			  <form>
+				<label class="text-center">Saisir dans le champ ci-dessous le N° du QR Code (7 caractères) ou N° de puce electronique (15 chiffres)</label>
+				<input type="text" name="str_search" class="form-control" ng-model="str_search">
+				<div class="panel panel-default">
+				  <div class="panel-body">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="processSearch()">
+					<span class="glyphicon glyphicon-flash"></span> Cherche  
+					</button>
+				  </div>
+				  <div class="text-center"><span class="badge">{{cc1}}</span> - <span class="badge">{{cc2}}</span> </div>
+				</div>
+			  </form>
+			  </div>
+			  <div class="col-sm-offset-2 col-sm-8">			
+				<img class="img-responsive a30debas" src="template/img/3visusmedailles2.png">
+			</div>	
+			
+			<div class="col-sm-offset-1 col-sm-10 tourvideo a30debas">			
+				<div class="titrevideo">				
+				Présentation QRV			
+				</div>  
+				<div class="margin50top embed-responsive embed-responsive-16by9 center-block">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_GNOKU0_xac?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+				</div>
+
+				<!--<div class="col-sm-offset-1 col-sm-10">				
+					<a href="https://youtu.be/FNMG5xsscKY" target="_blank" class="btn btn-primary btn-warning center-block">
+						<span class="glyphicon glyphicon-play">
+						</span> Présentation Vidéo
+					</a>			
+				</div>	-->	
+			</div> 
+			
+	</div>	
+
+	<div class="col-sm-12 text-center">			
+		<a href='#/Contact' class="btn btn-primary btn-info">
+			<span class="glyphicon glyphicon-play">
+			</span> Contacter Véthica
+		</a>			
+	</div>		
+</div>

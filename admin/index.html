@@ -1,0 +1,228 @@
+<!doctype html>
+<html ng-app="adminApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal ID - Administration</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">       
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="css/admin.css">       
+
+</head>
+<body>
+<div ng-controller="adminController" class="container">    
+  <div class="panel panel-primary">
+    <div class="panel panel-heading text-center">
+      <h2>Animal ID - Administration<span class="badge">{{cc}}</span></h2>
+    </div>
+    
+    <div class="panel panel-body">
+
+        <div class="row text-center">
+<!--             <button type="button" class="btn btn-link" ng-click="assoc()"
+ -->
+        <button type="button" class="btn btn-link" popover="Associe un QRCode avec un N°ISO" popover-trigger="mouseenter"
+            data-toggle="modal"  data-target="#assocModal" 
+            >Associe</button>
+            <button type="button" class="btn btn-link" ng-click="init_search()"
+            popover="Relance la liste depuis le début sans critères de recherche" popover-trigger="mouseenter"
+            >Init</button>
+
+            <input type="text" name="search" ng-model="str_search"></input>
+            <button type="button" class="btn btn-link" ng-click="search()"
+            popover="Cette recherche sera effectuée indistinctement sur les noms, prénoms, qrCode et derniers chiffres du N° de série..." popover-trigger="mouseenter"
+            >Recherche</button>
+            <a class="btn btn-link" href="stat/stat.html" target = "_blank">Stats</a>
+            <a class="btn btn-link" href="php/exportData.php">Export</a>
+            <a class="btn btn-link" href="php/exportLoterie.php">Export Loterie</a>
+
+<!--             <button type="button" lazy-load="true" ng-csv="exportData()" filename="test.csv" field-separator=";">Export</button> 
+ -->
+        </div>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>QRCode</th>
+                <th>N° Puce</th>
+                <th>Nom - Prénom </th>
+                <th>Téléphone</th>
+                <th>eMail</th>
+                <th>CP</th>
+                <th>Etat</th>
+                <th>Image</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="tuple in tuples">
+                <td>{{tuple.date_create}}</td>
+                <td><a href="http://qrv.fr/{{tuple.codepin}}" target = "_blank">{{tuple.codepin}}</td>
+                <td>{{tuple.nuserie}}</td>
+                <td>{{tuple.nom_proprio}}&nbsp;{{tuple.prenom_proprio}}</td>
+                <td>{{tuple.tel_proprio}}</td>
+                <td><a href="mailto:{{tuple.email_proprio}}" target="_top">{{tuple.email_proprio}}</a></td>
+                <td>{{tuple.code_postal}}</td>
+                <td>{{tuple.etat}}</td>
+                <td>
+                    <img degrees='{{tuple.rotate_image}}' rotate  ng-src="../img/{{tuple.image_name}}.jpg" 
+                    data-toggle="modal"  data-target="#imageModal" ng-click="setCurrentTuple(tuple)" width="24px" height="32px"></img>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default admin_button glyphicon glyphicon-trash" title="Delete" 
+                    data-toggle="modal"  data-target="#deleteModal" ng-click="setCurrentTuple(tuple)"
+                    width="10px">
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default admin_button glyphicon glyphicon-pencil" title="update" data-toggle="modal"  data-target="#updateModal" ng-click="setCurrentTuple(tuple)" >
+                    </button>
+                </td>            
+
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Fermer</button>
+            <h4 class="modal-title" id="myModalLabel">Suppression d'un enregistrement</h4>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Confirmez la suppression SVP</h3>
+                <h4 class="text-center">{{tuple.codepin}} {{tuple.nom_proprio}}</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="delete_no()">No</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="delete_yes()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="assocModal" tabindex="-1" role="dialog" aria-labelledby="assocModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Fermer</button>
+            <h4 class="modal-title" id="myModalLabel">Association QRCode - N° ISO</h4>
+            </div>
+            <div class="modal-body">
+            <form>
+                <label>N° ISO</label>
+                <input type="text" name="nuserie" id="nuserie" class="form-control" ng-model="newnuserie">
+                <label>N° QRCode</label>
+                <input type="text" name="codepin" id="codepin" class="form-control" ng-model="newcodepin">
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="assoc()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Fermer</button>
+            <h4 class="modal-title" id="myModalLabel">Modification d'un enregistrement</h4>
+            </div>
+            <div class="modal-body">
+            <form>
+                <h4 class="text-center">{{tuple.codepin}} {{tuple.nom_proprio}}</h4>
+                <label>N° Serie</label>
+                <input type="text" name="nuserie" id="nuserie" class="form-control" ng-model="tuple.nuserie">
+                <label>eMail propriètaire</label>
+                <input type="text" name="email_proprio" id="email_proprio" class="form-control" ng-model="tuple.email_proprio">
+                <label>Rotation image</label>
+                <input type="text" name="rotate_image" id="rotate_image" class="form-control" ng-model="tuple.rotate_image">
+                <label>Etat (En cours=0, Validé=1)</label>
+                <input type="text" name="etat" id="etat" class="form-control" ng-model="tuple.etat">
+                <label>Mot de passe</label>
+                <input type="text" name="password" id="password" class="form-control" ng-model="tuple.password_proprio">
+            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="update()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Fermer</button>
+            </div>
+            <div class="modal-body">
+                Rotate : {{tuple.rotate_image}}<br>
+                <div class="row text-center">
+                    <img degrees='{{tuple.rotate_image}}' rotate ng-src="../img/{{tuple.image_name}}.jpg"></img>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+    <span class="text-center col-md-4">
+Chaque page comporte <input type="text" class="text-center" size="1" name="search" ng-model="current_limit"></input>&nbsp;lignes
+    </span>
+
+    <span class="text-center col-md-4">
+        Page {{cur_page}} sur {{max_page}}
+    </span>            
+    <span class="text-center col-md-4">
+            <button type="button" class="btn btn-link" ng-disabled="prevDisabled()" ng-click="alert_prev()">Précédent</button>
+            <button type="button" class="btn btn-link" ng-disabled="nextDisabled()" ng-click="alert_next()">Suivant</button>
+    </span>            
+    </div>
+</div>
+
+
+</div>
+
+
+
+</body>
+</html>
+
+<script src="../inc/js/angular.min.js"></script>
+<script src="../inc/js/angular-sanitize.min.js"></script>
+<script src="../inc/js/jquery.min.js"></script>
+<script src="../inc/js/ui-bootstrap-0.11.2.min.js"></script>
+<script src="../inc/js/ui-bootstrap-tpls-0.11.2.min.js"></script>
+<script src="../inc/js/bootstrap.min.js"></script>
+
+<script src="../inc/js/ng-csv.min.js"></script>
+
+<script src="js/admin.js"></script>
+<script src="js/admin_ex.js"></script>
+
+<!-- <script src="js/build/qrv.min.js"></script>
+ -->
+
+
+

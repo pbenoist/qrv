@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="adminStatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal ID - Administration</title>
+    <link rel="stylesheet" href="../../inc/css/bootstrap.min.css">       
+    <link rel="stylesheet" href="css/adminStat.css">       
+    <meta name="viewport" content="initial-scale=1.0">
+
+</head>
+<body>
+
+
+<div ng-controller="adminStatController" class="container">    
+
+    <div class="panel panel-primary">
+        <div class="panel panel-heading text-center">
+          <h2>Animal ID - Administration<span class="badge">{{cc}}</span></h2>
+        </div>
+    </div>
+
+<div id="chart1" ac-chart="chartType" ac-data="dataVal" ac-config="config"></div>
+
+x : <input type="text" id="xval" ng-model="xval" ng-change="change()">
+y : <input type="text" id="yval" ng-model="yval" ng-change="change()">
+
+
+{{info}}
+
+</div>
+
+</body>
+</html>
+
+<script src="../../inc/js/angular.js"></script>
+<script src="../../inc/js/jquery.min.js"></script>
+<script src="../../inc/js/bootstrap.min.js"></script>
+<script src="../../inc/js/d3.min.js"></script>
+<script src="../../inc/js/angular-charts.js"></script>
+
+<script src="js/adminStat.js"></script>
+
+
+<!-- <script src="js/build/qrv.min.js"></script>
+ -->
+
+
+

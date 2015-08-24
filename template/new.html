@@ -1,0 +1,110 @@
+﻿ 	<div class="col-sm-3 habillage">		<div class="col-sm-offset-3 col-sm-8 tourvideo a30debas">			<div class="titrevideo2">				Fonctionnement			</div>  			<div class="col-sm-12">				<a href="https://youtu.be/A_Op9N6oeXI" target="_blank" class="btn btn-primary btn-warning center-block"><span class="glyphicon glyphicon-play"></span> Didacticiel</a>			</div>		</div>   	</div><div class="col-sm-6">
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <h2 class="panel-title text-center">Création de compte pour le N° </h2>
+    <h4 class="panel-title text-center">{{nuserie}}</h4>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-title text-center qrv-panel-title">N° de médaille QRV : {{codepin}}</div>
+    </div>
+  </div>
+
+  <div class="panel-body">
+
+
+  <!-- FORM -->
+  <form ng-submit="processForm()">
+
+    <div class="panel panel-info text-center">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">Information obligatoire</h3>
+      </div>
+  
+      <div class="panel-body" >
+
+        <label>Votre adresse de messagerie</label>
+        <input type="email" name="email_proprio" id="email_proprio" class="form-control" ng-model="email_proprio" required>
+  
+      </div>
+    </div>
+
+    <div class="panel panel-info text-center">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">Informations fortement recommandées</h3>
+      </div>
+  
+      <div class="panel-body" >
+
+        <label>Votre mot de passe</label>
+        <input type="password" name="password_proprio" id="password_proprio" class="form-control" ng-model="password_proprio" placeholder="vethica">
+<h5 class="small_grey" >Votre mot de passe sera <strong>vethica</strong>. Cependant, il est fortement conseillé de choisir un mot de passe personnel. 
+</h5>
+  
+        <label>Votre téléphone</label>
+        <input type="text" name="tel_proprio" class="form-control" ng-model="tel_proprio">
+<h5 class="small_grey">Avec ce n° de tél, toute personne ayant recueilli votre animal pourra entrer directement en contact avec vous. Il ne sera en aucun cas utilisé à des fins commerciales
+</h5>
+
+      </div>
+
+    </div>
+
+    <div class="panel panel-info text-center">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">Informations facultatives</h3>
+      </div>
+  
+      <div class="panel-body" >
+
+        <label>Le nom de votre animal</label>
+        <input type="text" name="nom_animal" class="form-control" ng-model="nom_animal">
+
+        <label>Espèce</label>
+          <div class="form-group">
+            <label><input type="radio" name="espece" value="0" ng-model="espece" checked> Chien&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <label><input type="radio" name="espece" value="1" ng-model="espece">&nbsp;&nbsp;&nbsp;&nbsp;Chat </label>
+          </div>
+
+        <label>Date naissance</label>
+        <input type="date" name="date_naissance" id="date_naissance" class="form-control" ng-model="date_naissance">
+
+        <label>Race</label>
+        <input type="text" name="race" id="race" class="form-control" ng-model="race">
+
+
+        <label>Votre nom</label>
+        <input type="text" name="nom_proprio" class="form-control"  ng-model="nom_proprio" capitalize_all>
+    
+        <label>Votre prénom</label>
+        <input type="text" name="prenom_proprio" class="form-control" ng-model="prenom_proprio" capitalize-first>
+       
+        <label>Votre code postal</label>
+        <input type="text" name="code_postal" class="form-control" ng-model="code_postal">
+
+      </div>
+    </div>
+
+<div class="row text-center">
+    {{message}}
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+    <button type="submit" class="btn btn-primary btn-lg btn-block" >
+      <span class="glyphicon glyphicon-flash"></span> Envoi
+    </button>
+</div>
+</div>
+
+  </form>
+  </div>  
+
+<h5><small class="text-center">
+  Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant à VETHICA BP 312 - 21208 BEAUNE
+</small></h5>
+
+</div>
+</div>	<div class="col-sm-12 text-center">			<a href='#/Contact' class="btn btn-primary btn-info"><span class="glyphicon glyphicon-play"></span> Contactez-nous</a>			</div>
+

@@ -1,0 +1,46 @@
+body {
+  font-size: 12px;
+  color: #333333;
+}
+
+.done-true {
+    text-decoration: line-through;
+    color: grey;
+    }
+
+.done-1 {
+    text-decoration: line-through;
+    color: grey;
+    }
+
+.done-0 {
+    color: red;
+    }
+
+ul
+{
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.admin_col {
+    float: left;
+    border-style: solid;
+    border-color: gray;
+}
+.admin_button {
+    display: block;
+    float: right;
+    margin-right: 5px;
+
+}
+.admin_button_end {
+    clear: both;
+}
+
+.badge {
+  margin-left: 10px;
+  padding: 1px 9px 2px;
+  font-size: 22.025px;
+  background-color: #b94a48;  
+}

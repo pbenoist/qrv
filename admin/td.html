@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <title>Open a Bootstrap Modal with Angular</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">       
+  </head>
+  <body>
+
+<div>
+<a href="#myModal" open-dialog role="button" class="btn">Add something</a>
+</div>
+
+<div ng-controller="SomeCtrl">
+  <input type="text" ng-model="blub" /> Value 
+  <button open-dialog class="btn btn-primary">Test</button>
+</div>
+   
+<div class="modal hide fade" id="myModal" ng-controller="ModalCtrl">
+   <div class="modal-body">
+      <p>Body: </p>
+   </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script>
+ -->
+<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="js/td.js"></script>    
+  </body>
+</html>

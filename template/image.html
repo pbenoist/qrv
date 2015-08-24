@@ -1,0 +1,65 @@
+<div class="container">
+ <div class="col-sm-6 col-sm-offset-3 panel panel-primary">
+
+    <div class="panel-heading">
+        <h3 class="panel-title text-center">{{nuserie}}</h3>
+    </div>
+
+  <div class="panel-body">
+
+    <div class="text-center">
+    <h3 class="text-center">Choisissez une photo pour votre animal</h3>
+    </div>
+
+    <div class="text-center">
+Pour affecter une photo à la fiche de votre animal, suivez les 3 étapes suivantes
+    </div>
+
+    <div class="upload_form_cont">
+        <form id="upload_form" enctype="multipart/form-data" method="post" action="php/upload.php">
+            <div>
+                <h4>Etape 1</h4>
+                <div><input type="hidden" name="param" id="param" value={{codepin}} /></div>
+                <div><input type="file" name="image_file" id="image_file" onchange="fileSelected();" /></div>
+    <img id="preview" />
+            </div>
+
+            <div>
+                <h4>Etape 2</h4>
+
+                    <div>
+                        <input class="btn" type="button" value="Mise à jour de la fiche" onclick="startUploading()" />
+                    </div>
+<!--                 
+                <button class="btn btn-sm btn-primary" value="" onclick="startUploading()">Mise à jour de la fiche</button>
+ -->
+            <div id="error2">Erreur pendant la transmition du fichier</div>
+            <div id="abort">Transmition interrompue !</div>
+            <div id="warnsize"><span class="text-center">Fichier est trop volumineux</span></div>
+            <div id="progress_info">
+                <div id="progress"></div>
+                <div id="progress_percent">&nbsp;</div>
+                <div class="clear_both"></div>
+                <div>
+                    <div id="speed">&nbsp;</div>
+                    <div id="remaining">&nbsp;</div>
+                    <div id="b_transfered">&nbsp;</div>
+                    <div class="clear_both"></div>
+                </div>
+                <div id="upload_response"></div>
+            </div>
+            <div id="error"><span class="text_center">Impossible de traiter ce type de fichier</span>
+            </div>
+
+            </div>
+
+            <div>
+            <h4>Etape 3</h4>
+            <a class="btn btn-sm btn-primary" id="retour" href="#/Show/{{codepin}}" >Retour fiche</a>
+            </div>
+
+        </form>
+    </div>
+   </div>
+</div>
+</div><div class="col-sm-12 text-center">			<a href='#/Contact' class="btn btn-primary btn-info"><span class="glyphicon glyphicon-play"></span> Contactez-nous</a>			</div>
